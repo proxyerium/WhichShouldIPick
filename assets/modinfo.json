@@ -1,0 +1,13 @@
+{
+    "id": "which-should-i-pick",
+    "name": "Which should I pick?",
+    "version": "0.1",
+    "authors": "proxyerium",
+    "description": "Your mod's description",
+    "requirements": [
+        "improved-input-config"
+    ],
+    "requirements_names": [],
+    "tags": [],
+    "checksum_override_version": false
+}
