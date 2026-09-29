@@ -1,22 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using BepInEx;
 using RWCustom;
 using UnityEngine;
 
 namespace WhichShouldIPick
 {
-    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    public class Plugin : BaseUnityPlugin
-    {
-        public const string PluginGuid = "proxyerium.which-should-i-pick";
-        public const string PluginName = "Which should I pick?";
-        public const string PluginVersion = "0.1";
-
-        private void Awake() => Hook.Apply();
-    }
-
     internal static class Hook
     {
         // Player.CanIPickThisUp is private; bind it to our own delegate once.
