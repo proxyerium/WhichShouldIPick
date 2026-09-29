@@ -5,14 +5,19 @@ using UnityEngine;
 
 namespace WhichShouldIPick
 {
-    // Debug logging: prints pickup details to the BepInEx console, so the
-    // mod's effect on Player.PickupCandidate can be observed in-game.
-    // - Every PickupCandidate evaluation logs vanilla's original pick and
-    //   (in Hook.cs) what our override returns instead.
-    // - Every successful Player grab logs the newly grasped object.
+    // Pickup diagnostics. Debug builds only: with DEBUG undefined every member
+    // below is an empty stub, so a Release dll writes nothing to the log.
+    //
+    // Logged events:
+    //   - every PickupCandidate evaluation that lands on a grab press edge
+    //   - every successful Player grab
+    //   - every grab the category filter blocked
     internal static class Logging
     {
+#if DEBUG
         private static ManualLogSource log = null!;
+
+        private const string Prefix = "[WhichShouldIPick] ";
 
         public static void Apply(ManualLogSource source)
         {
@@ -42,6 +47,19 @@ namespace WhichShouldIPick
 
                 return grabbed;
             };
+        }
+
+        // Called by Hook when the category filter refuses a grab.
+        internal static void Blocked(PhysicalObject obj, int category)
+        {
+            log.LogInfo(Prefix + "blocked " + Describe(obj) + " category=" + category);
+        }
+
+        // Called by Hook when the mod cannot arm itself because a game method it
+        // reflects on is missing. Debug builds only, like every other log line.
+        internal static void ErrorDisabled(string memberName)
+        {
+            log.LogError(Prefix + "Player." + memberName + " not found; category filter disabled.");
         }
 
         private static void LogCandidate(Player player, string label, PhysicalObject? obj, bool favorSpears)
@@ -111,5 +129,19 @@ namespace WhichShouldIPick
                 : obj is Weapon ? " weapon" : "";
             return $"{type}#{id}{extra}";
         }
+#else
+        // Release: no logging at all.
+        public static void Apply(ManualLogSource source)
+        {
+        }
+
+        internal static void Blocked(PhysicalObject obj, int category)
+        {
+        }
+
+        internal static void ErrorDisabled(string memberName)
+        {
+        }
+#endif
     }
 }
