@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
@@ -21,31 +21,31 @@
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>Reference\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
+			<HintPath>ref\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="BepInEx">
-			<HintPath>Reference\BepInEx\core\BepInEx.dll</HintPath>
+			<HintPath>ref\BepInEx\core\BepInEx.dll</HintPath>
 		</Reference>
 		<Reference Include="HOOKS-Assembly-CSharp">
-			<HintPath>Reference\BepInEx\plugins\HOOKS-Assembly-CSharp.dll</HintPath>
+			<HintPath>ref\BepInEx\plugins\HOOKS-Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="ImprovedInput">
-			<HintPath>Reference\ImprovedInputConfig\ImprovedInput.dll</HintPath>
+			<HintPath>ref\ImprovedInputConfig\ImprovedInput.dll</HintPath>
 		</Reference>
 		<Reference Include="MonoMod.RuntimeDetour">
-			<HintPath>Reference\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+			<HintPath>ref\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
 		</Reference>
 		<Reference Include="MonoMod.Utils">
-			<HintPath>Reference\BepInEx\core\MonoMod.Utils.dll</HintPath>
+			<HintPath>ref\BepInEx\core\MonoMod.Utils.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine">
-			<HintPath>Reference\RWData\Managed\UnityEngine.dll</HintPath>
+			<HintPath>ref\RWData\Managed\UnityEngine.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>Reference\RWData\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<HintPath>ref\RWData\Managed\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputLegacyModule">
-			<HintPath>Reference\RWData\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+			<HintPath>ref\RWData\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
