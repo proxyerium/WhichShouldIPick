@@ -8,19 +8,17 @@
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="Build">
-		<Copy SourceFiles="$(TargetPath)"
-			  DestinationFolder="$(ProjectDir)out\plugins" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)out\plugins" />
 
 		<ItemGroup>
 			<Assets Include="$(ProjectDir)assets\**\*" />
 		</ItemGroup>
 
-		<Copy SourceFiles="@(Assets)"
-			  DestinationFiles="@(Assets->'$(ProjectDir)out\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(Assets)" DestinationFiles="@(Assets->'$(ProjectDir)out\%(RecursiveDir)%(Filename)%(Extension)')" />
 	</Target>
 
 	<ItemGroup>
-		<Reference Include="Assembly-CSharp">
+		<Reference Include="PUBLIC-Assembly-CSharp">
 			<HintPath>ref\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="BepInEx">
