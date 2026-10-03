@@ -1,0 +1,2 @@
+Grab weapon|武器をつかむ
+Grab food|食べ物をつかむ

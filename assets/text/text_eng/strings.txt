@@ -1,0 +1,2 @@
+Grab weapon|Grab weapon
+Grab food|Grab food

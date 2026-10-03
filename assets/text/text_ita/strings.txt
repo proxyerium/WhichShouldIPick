@@ -1,0 +1,2 @@
+Grab weapon|Prendi l'arma
+Grab food|Prendi il cibo

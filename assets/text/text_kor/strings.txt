@@ -1,0 +1,2 @@
+Grab weapon|무기 잡기
+Grab food|음식 잡기

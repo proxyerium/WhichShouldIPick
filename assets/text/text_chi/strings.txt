@@ -1,0 +1,2 @@
+Grab weapon|抓取武器
+Grab food|抓取食物
