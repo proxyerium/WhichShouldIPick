@@ -7,7 +7,7 @@ namespace WhichShouldIPick
     {
         public const string PluginGuid = "proxyerium.which-should-i-pick";
         public const string PluginName = "Which should I pick?";
-        public const string PluginVersion = "0.2";
+        public const string PluginVersion = "0.3";
 
         private void Awake()
         {
