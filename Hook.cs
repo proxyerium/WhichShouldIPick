@@ -20,7 +20,6 @@ namespace WhichShouldIPick
         // Vanilla arms a pickup with wantToPickUp = 5 on the press edge, and
         // that window outlives the key release, so a category key that was just
         // let go still has to be recognized for this many frames.
-        private const int PickupWindowFrames = 5;
 
         public static void Apply()
         {
@@ -122,7 +121,7 @@ namespace WhichShouldIPick
             }
 
             CustomInput[] history = player.InputHistory();
-            int frames = System.Math.Min(history.Length, PickupWindowFrames);
+            int frames = System.Math.Min(history.Length, 5);
 
             // Newest press first: that is the one that armed the window we are
             // still inside. Both keys in the same frame: weapon wins.
@@ -158,6 +157,28 @@ namespace WhichShouldIPick
             return obj is IPlayerEdible edible && edible.Edible;
         }
 
+        // The two kinds the preference can ask for, named by the game's own
+        // types. Everything else the game calls a weapon - plain and electric
+        // spears, boomerangs, bullets - is deliberately in neither list, so it
+        // only ever comes up when nothing preferred is in reach.
+        private static bool MatchesPreference(PhysicalObject obj, WeaponPreference prefer)
+        {
+            if (prefer == WeaponPreference.Explosives)
+            {
+                return obj is ScavengerBomb
+                    || obj is ExplosiveSpear
+                    || obj is FirecrackerPlant
+                    || obj is MoreSlugcats.SingularityBomb;
+            }
+
+            return obj is Rock
+                || obj is FlareBomb
+                || obj is PuffBall
+                || obj is SporePlant
+                || obj is GraffitiBomb
+                || obj is MoreSlugcats.LillyPuck;
+        }
+
         // Vanilla's own candidate search - Player.PickupCandidate - with the one
         // condition it cannot take: only this category counts. Same reach rules,
         // same spear favor, same flip bias, so what gets picked is what vanilla
@@ -173,6 +194,20 @@ namespace WhichShouldIPick
             Vector2 pos = player.bodyChunks[0].pos;
             int playerRipple = player.abstractPhysicalObject.rippleLayer;
             bool playerBothSides = player.abstractPhysicalObject.rippleBothSides;
+
+            // A preference only reorders what vanilla would already have
+            // considered: it cannot invent reach. The preferred kind is kept as
+            // a second best, so vanilla's own order still decides among the
+            // preferred items and, when the room holds none of them, the answer
+            // is exactly the one vanilla would have given.
+            // Nullable on purpose: the only way this is unset is an interface
+            // that never registered, and a throw from inside this hook would
+            // freeze the game rather than report the problem.
+            WeaponPreference prefer = wantWeapon
+                ? Options.WeaponPrefer?.Value ?? WeaponPreference.Default
+                : WeaponPreference.Default;
+            PhysicalObject? preferred = null;
+            float preferredScore = float.MaxValue;
 
             PhysicalObject? best = null;
             float bestScore = float.MaxValue;
@@ -232,10 +267,16 @@ namespace WhichShouldIPick
                         bestScore = score;
                         best = obj;
                     }
+
+                    if (prefer != WeaponPreference.Default && score < preferredScore && MatchesPreference(obj, prefer))
+                    {
+                        preferredScore = score;
+                        preferred = obj;
+                    }
                 }
             }
 
-            return best;
+            return preferred ?? best;
         }
     }
 }
