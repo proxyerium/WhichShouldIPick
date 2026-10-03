@@ -1,2 +1,8 @@
 Grab weapon|Grab weapon
 Grab food|Grab food
+WeaponPrefer|Weapon prefer
+WeaponPreferDesc|Which type to grab when several kinds are within reach.
+WeaponPreferTab|Weapon
+WeaponPreferDefault|Default
+WeaponPreferExplosives|Explosives
+WeaponPreferUtilities|Utilities

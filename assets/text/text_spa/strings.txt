@@ -1,2 +1,8 @@
 Grab weapon|Agarrar arma
 Grab food|Agarrar comida
+WeaponPrefer|Preferencia de arma
+WeaponPreferDesc|Qué tipo agarrar cuando varios tipos están al alcance.
+WeaponPreferTab|Arma
+WeaponPreferDefault|Predeterminado
+WeaponPreferExplosives|Explosivos
+WeaponPreferUtilities|Utilitarios

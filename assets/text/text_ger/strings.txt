@@ -1,2 +1,8 @@
 Grab weapon|Waffe greifen
 Grab food|Nahrung greifen
+WeaponPrefer|Waffe bevorzugen
+WeaponPreferDesc|Welche Art greifen, wenn mehrere Sorten in Reichweite sind.
+WeaponPreferTab|Waffe
+WeaponPreferDefault|Standard
+WeaponPreferExplosives|Sprengstoff
+WeaponPreferUtilities|Hilfsmittel

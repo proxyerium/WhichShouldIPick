@@ -13,6 +13,7 @@ namespace WhichShouldIPick
         {
             Keybinds.Register();
             Hook.Apply();
+            Options.Register();
         }
     }
 }

@@ -1,2 +1,8 @@
 Grab weapon|Схватить оружие
 Grab food|Схватить еду
+WeaponPrefer|Предпочтение оружия
+WeaponPreferDesc|Какой тип хватать, когда в зоне досягаемости несколько видов.
+WeaponPreferTab|Оружие
+WeaponPreferDefault|По умолчанию
+WeaponPreferExplosives|Взрывчатка
+WeaponPreferUtilities|Вспомогательное

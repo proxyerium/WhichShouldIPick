@@ -1,2 +1,8 @@
 Grab weapon|武器をつかむ
 Grab food|食べ物をつかむ
+WeaponPrefer|武器の優先
+WeaponPreferDesc|つかめる範囲に複数の種類があるとき、優先してつかむ種類。
+WeaponPreferTab|武器
+WeaponPreferDefault|標準
+WeaponPreferExplosives|爆発物
+WeaponPreferUtilities|補助具

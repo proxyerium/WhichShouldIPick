@@ -1,2 +1,8 @@
 Grab weapon|抓取武器
 Grab food|抓取食物
+WeaponPrefer|武器偏好
+WeaponPreferDesc|拾取范围内有多种类型时，优先抓取的类型
+WeaponPreferTab|武器
+WeaponPreferDefault|默认
+WeaponPreferExplosives|爆炸物
+WeaponPreferUtilities|辅助类
