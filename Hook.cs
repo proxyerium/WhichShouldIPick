@@ -90,6 +90,41 @@ namespace WhichShouldIPick
 
                 orig(self, obj, graspUsed);
             };
+
+            // 4) Down + Grab is vanilla's "put it down", and it lands in
+            // Player.ReleaseObject: GrabUpdate picks the first occupied hand
+            // and lays that item on the ground. A category key has to mean the
+            // same thing when putting down as when picking up - only an item
+            // of the asked-for kind goes down. When the hand vanilla picked
+            // holds something else, the matching hand goes down instead;
+            // nothing of that kind in hand means the press drops nothing.
+            On.Player.ReleaseObject += (orig, self, grasp, eu) =>
+            {
+                if (VanillaGrab(self)
+                    || !RequestedCategory(self, out bool wantWeapon)
+                    || MatchesCategory(Grabbed(self, grasp), wantWeapon))
+                {
+                    orig(self, grasp, eu);
+                    return;
+                }
+
+                for (int i = 0; i < self.grasps.Length; i++)
+                {
+                    if (MatchesCategory(Grabbed(self, i), wantWeapon))
+                    {
+                        orig(self, i, eu);
+                        return;
+                    }
+                }
+            };
+        }
+
+        // What a grasp currently holds, or null for an empty hand. Hand
+        // indices run 0..1, and ReleaseObject is only ever reached with a
+        // non-null hand, but the search below probes both.
+        private static PhysicalObject? Grabbed(Player player, int grasp)
+        {
+            return player.grasps[grasp]?.grabbed;
         }
 
         // The vanilla Grab key, read from the keybind rather than from
@@ -147,7 +182,7 @@ namespace WhichShouldIPick
         // Both categories are the game's own notions, so modded items follow
         // along without a list: a weapon is what the game calls a Weapon, food
         // is what the game currently calls edible.
-        private static bool MatchesCategory(PhysicalObject obj, bool wantWeapon)
+        private static bool MatchesCategory(PhysicalObject? obj, bool wantWeapon)
         {
             if (wantWeapon)
             {
