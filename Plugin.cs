@@ -11,7 +11,6 @@ namespace WhichShouldIPick
 
         private void Awake()
         {
-            Logging.Apply(Logger);
             Keybinds.Register();
             Hook.Apply();
         }
