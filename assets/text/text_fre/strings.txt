@@ -6,5 +6,13 @@ WeaponPreferTab|Arme
 WeaponPreferDefault|Par défaut
 WeaponPreferExplosives|Explosifs
 WeaponPreferUtilities|Utilitaires
+FoodPrefer|Préférence de nourriture
+FoodPreferDesc|Quel aliment prendre en premier quand plusieurs sont à portée.
+FoodPreferTab|Nourriture
+FoodPreferDefault|Par défaut
+FoodPreferCarnivorous|Carnivore
+FoodPreferVegetarian|Végétarien
+GrabConsumedCreatures|Prendre les cadavres vides
+GrabConsumedCreaturesDesc|Si Ramasser la nourriture peut aussi prendre un cadavre déjà mangé, sans viande restante
 VanillaGrabMeddling|Ingérence du Ramasser
 VanillaGrabMeddlingDesc|Si la touche Ramasser peut prendre les armes et la nourriture

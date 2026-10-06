@@ -6,5 +6,13 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Predeterminado
 WeaponPreferExplosives|Explosivos
 WeaponPreferUtilities|Utilitarios
+FoodPrefer|Preferencia de comida
+FoodPreferDesc|Qué comida agarrar primero cuando varias están al alcance.
+FoodPreferTab|Comida
+FoodPreferDefault|Predeterminado
+FoodPreferCarnivorous|Carnívoro
+FoodPreferVegetarian|Vegetariano
+GrabConsumedCreatures|Coger cadáveres vacíos
+GrabConsumedCreaturesDesc|Si Agarrar comida también puede coger un cadáver ya comido, sin carne restante
 VanillaGrabMeddling|Intromisión de Agarrar
 VanillaGrabMeddlingDesc|Si la tecla Agarrar puede coger armas y comida

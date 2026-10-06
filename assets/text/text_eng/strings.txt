@@ -6,5 +6,13 @@ WeaponPreferTab|Weapon
 WeaponPreferDefault|Default
 WeaponPreferExplosives|Explosives
 WeaponPreferUtilities|Utilities
+FoodPrefer|Food prefer
+FoodPreferDesc|Which food to grab first when several are within reach.
+FoodPreferTab|Food
+FoodPreferDefault|Default
+FoodPreferCarnivorous|Carnivorous
+FoodPreferVegetarian|Vegetarian
+GrabConsumedCreatures|Grab empty corpses
+GrabConsumedCreaturesDesc|Whether Grab food can also pick up a corpse that has been eaten clean, with no meat left
 VanillaGrabMeddling|Vanilla Grab meddling
 VanillaGrabMeddlingDesc|Whether vanilla Grab key can pick weapons and foods

@@ -6,5 +6,13 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Padrão
 WeaponPreferExplosives|Explosivos
 WeaponPreferUtilities|Utilitários
+FoodPrefer|Preferência de comida
+FoodPreferDesc|Qual comida pegar primeiro quando várias estão ao alcance.
+FoodPreferTab|Comida
+FoodPreferDefault|Padrão
+FoodPreferCarnivorous|Carnívoro
+FoodPreferVegetarian|Vegetariano
+GrabConsumedCreatures|Pegar carcaças vazias
+GrabConsumedCreaturesDesc|Se Pegar comida também pode pegar uma carcaça já comida, sem carne restante
 VanillaGrabMeddling|Intromissão do Pegar
 VanillaGrabMeddlingDesc|Se a tecla Pegar pode pegar armas e comida

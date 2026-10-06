@@ -6,5 +6,13 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Predefinito
 WeaponPreferExplosives|Esplosivi
 WeaponPreferUtilities|Utilità
+FoodPrefer|Preferenza cibo
+FoodPreferDesc|Quale cibo prendere per primo quando più tipi sono a portata.
+FoodPreferTab|Cibo
+FoodPreferDefault|Predefinito
+FoodPreferCarnivorous|Carnivoro
+FoodPreferVegetarian|Vegetariano
+GrabConsumedCreatures|Prendi carcasse vuote
+GrabConsumedCreaturesDesc|Se Prendi il cibo può anche raccogliere una carcassa già mangiata, senza carne rimasta
 VanillaGrabMeddling|Intromissione di Prendi
 VanillaGrabMeddlingDesc|Se il tasto Prendi può raccogliere armi e cibo

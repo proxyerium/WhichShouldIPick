@@ -111,7 +111,7 @@ namespace WhichShouldIPick
             On.Player.ReleaseObject += (orig, self, grasp, eu) =>
             {
                 if (!RequestedCategory(self, out GrabFilter filter)
-                    || MatchesFilter(Grabbed(self, grasp), filter))
+                    || MatchesFilter(self, Grabbed(self, grasp), filter))
                 {
                     orig(self, grasp, eu);
                     return;
@@ -119,7 +119,7 @@ namespace WhichShouldIPick
 
                 for (int i = 0; i < self.grasps.Length; i++)
                 {
-                    if (MatchesFilter(Grabbed(self, i), filter))
+                    if (MatchesFilter(self, Grabbed(self, i), filter))
                     {
                         orig(self, i, eu);
                         return;
@@ -211,7 +211,7 @@ namespace WhichShouldIPick
         {
             if (RequestedCategory(player, out GrabFilter filter))
             {
-                return MatchesFilter(obj, filter);
+                return MatchesFilter(player, obj, filter);
             }
 
             if (!VanillaMeddlingOn() || !GrabPending(player))
@@ -219,7 +219,7 @@ namespace WhichShouldIPick
                 return true;
             }
 
-            return MatchesFilter(obj, GrabFilter.Other);
+            return MatchesFilter(player, obj, GrabFilter.Other);
         }
 
         // The mod's own option, read without trusting that the interface
@@ -243,8 +243,9 @@ namespace WhichShouldIPick
 
         // Both categories are the game's own notions, so modded items follow
         // along without a list: a weapon is what the game calls a Weapon, food
-        // is what the game currently calls edible.
-        private static bool MatchesFilter(PhysicalObject? obj, GrabFilter filter)
+        // is what the game currently calls edible - plus a corpse this slugcat
+        // could eat (see IsFood).
+        private static bool MatchesFilter(Player player, PhysicalObject? obj, GrabFilter filter)
         {
             if (filter == GrabFilter.Weapon)
             {
@@ -253,10 +254,38 @@ namespace WhichShouldIPick
 
             if (filter == GrabFilter.Food)
             {
-                return obj is IPlayerEdible edible && edible.Edible;
+                return IsFood(player, obj);
             }
 
-            return !(obj is Weapon) && !(obj is IPlayerEdible edible2 && edible2.Edible);
+            return !(obj is Weapon) && !IsFood(player, obj);
+        }
+
+        // A corpse this slugcat could eat is food: Player.CanEatMeat is the
+        // game's own answer to that half - dead centipedes for a plain slugcat,
+        // any dead creature for a meat-eater (Hunter/Red, Artificer, Gourmand),
+        // nothing at all for Saint or Spearmaster - so a slugcat that cannot
+        // eat corpses never sees one move keys, and the vanilla key keeps
+        // dragging them exactly as before.
+        //
+        // Meat left on the bones (State.meatLeft, the count the game chews down
+        // one bite at a time) does not matter to that: fresh or half-eaten, it
+        // is still food. Only a fully consumed one - meatLeft at 0, nothing on
+        // it worth a bite - is left on the vanilla key, unless the corpse
+        // option asks for those too.
+        private static bool IsFood(Player player, PhysicalObject? obj)
+        {
+            if (obj is IPlayerEdible edible && edible.Edible)
+            {
+                return true;
+            }
+
+            if (!(obj is Creature creature) || !creature.dead || !player.CanEatMeat(creature))
+            {
+                return false;
+            }
+
+            return creature.State.meatLeft != 0
+                || (Options.GrabConsumedCreatures?.Value ?? false);
         }
 
         // The two kinds the preference can ask for, named by the game's own
@@ -298,17 +327,19 @@ namespace WhichShouldIPick
             bool playerBothSides = player.abstractPhysicalObject.rippleBothSides;
 
             // A preference only reorders what vanilla would already have
-            // considered: it cannot invent reach, and it is a weapon option, so
-            // it has nothing to say about the other two filters. The preferred
-            // kind is kept as a second best, so vanilla's own order still
-            // decides among the preferred items and, when the room holds none
-            // of them, the answer is exactly the one vanilla would have given.
-            // Nullable on purpose: the only way this is unset is an interface
-            // that never registered, and a throw from inside this hook would
-            // freeze the game rather than report the problem.
+            // considered: it cannot invent reach. The preferred item is kept
+            // as a second best, so vanilla's own order still decides among the
+            // preferred ones and, when the room holds none of them, the answer
+            // is exactly the one vanilla would have given. Nullable on purpose:
+            // the only way one is unset is an interface that never registered,
+            // and a throw from inside this hook would freeze the game rather
+            // than report the problem.
             WeaponPreference prefer = filter == GrabFilter.Weapon
                 ? Options.WeaponPrefer?.Value ?? WeaponPreference.Default
                 : WeaponPreference.Default;
+            FoodPreference foodPrefer = filter == GrabFilter.Food
+                ? Options.FoodPrefer?.Value ?? FoodPreference.Default
+                : FoodPreference.Default;
             PhysicalObject? preferred = null;
             float preferredScore = float.MaxValue;
 
@@ -322,7 +353,7 @@ namespace WhichShouldIPick
                 for (int j = 0; j < layer.Count; j++)
                 {
                     PhysicalObject obj = layer[j];
-                    if (!MatchesFilter(obj, filter))
+                    if (!MatchesFilter(player, obj, filter))
                     {
                         continue;
                     }
@@ -376,10 +407,51 @@ namespace WhichShouldIPick
                         preferredScore = score;
                         preferred = obj;
                     }
+
+                    if (foodPrefer == FoodPreference.Carnivorous && score < preferredScore && IsCorpse(obj))
+                    {
+                        preferredScore = score;
+                        preferred = obj;
+                    }
+                    else if (foodPrefer == FoodPreference.Vegetarian && score < preferredScore && IsVegetarian(obj))
+                    {
+                        preferredScore = score;
+                        preferred = obj;
+                    }
                 }
             }
 
             return preferred ?? best;
+        }
+
+        // Whether an edible in reach is meat rather than a plant or a bug: any
+        // creature the food key can chew on and that the game does not hand over
+        // whole. A live centipede or centiwing is IPlayerEdible - the slugcat
+        // stuffs the whole thing in - so it counts as ordinary food and stays
+        // out of this; a dead one is a body and counts.
+        //
+        // Only ever asked about a candidate the food filter already let through,
+        // so a slugcat that cannot eat it never gets here.
+        private static bool IsCorpse(PhysicalObject obj)
+        {
+            return obj is Creature creature && !(creature is IPlayerEdible);
+        }
+
+        // The other half: food that is not an animal at all - fruit, mushroom,
+        // karma flower, water nut, the plants a slugcat picks rather than
+        // hunts. "An animal" is taken from the game's own line, which it draws
+        // in NourishmentOfObjectEaten for Saint: everything the game refuses
+        // that slugcat is its idea of flesh, and every edible on that list is
+        // either a Creature or one of the two edibles whose class is an item
+        // anyway (the jellyfish, and Watcher's box worm larva). Modded
+        // creatures and modded plants follow the same rule with no list of our
+        // own. Eggbug eggs fall on the vegetarian side, as they do for Saint.
+        private static bool IsVegetarian(PhysicalObject obj)
+        {
+            return obj is IPlayerEdible
+                && (obj is not Creature)
+                && (obj is not JellyFish)
+                && (obj is not Watcher.BoxWorm.Larva);
         }
     }
 }

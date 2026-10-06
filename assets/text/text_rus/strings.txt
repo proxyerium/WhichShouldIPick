@@ -6,5 +6,13 @@ WeaponPreferTab|Оружие
 WeaponPreferDefault|По умолчанию
 WeaponPreferExplosives|Взрывчатка
 WeaponPreferUtilities|Вспомогательное
+FoodPrefer|Предпочтение еды
+FoodPreferDesc|Какую еду хватать первой, когда несколько видов в зоне досягаемости.
+FoodPreferTab|Еда
+FoodPreferDefault|По умолчанию
+FoodPreferCarnivorous|Мясоедное
+FoodPreferVegetarian|Растительное
+GrabConsumedCreatures|Брать пустые трупы
+GrabConsumedCreaturesDesc|Может ли «Схватить еду» также брать съеденный труп без мяса
 VanillaGrabMeddling|Вмешательство «Схватить»
 VanillaGrabMeddlingDesc|Может ли клавиша «Схватить» брать оружие и еду

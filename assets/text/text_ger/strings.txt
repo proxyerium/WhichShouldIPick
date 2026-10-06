@@ -6,5 +6,13 @@ WeaponPreferTab|Waffe
 WeaponPreferDefault|Standard
 WeaponPreferExplosives|Sprengstoff
 WeaponPreferUtilities|Hilfsmittel
+FoodPrefer|Nahrung bevorzugen
+FoodPreferDesc|Welche Nahrung zuerst greifen, wenn mehrere in Reichweite sind.
+FoodPreferTab|Nahrung
+FoodPreferDefault|Standard
+FoodPreferCarnivorous|Fleischfressend
+FoodPreferVegetarian|Vegetarisch
+GrabConsumedCreatures|Leere Kadaver aufnehmen
+GrabConsumedCreaturesDesc|Ob Nahrung greifen auch einen leergefressenen Kadaver ohne Fleisch aufnehmen kann
 VanillaGrabMeddling|Greifen-Einmischung
 VanillaGrabMeddlingDesc|Ob die Greifen-Taste Waffen und Nahrung aufnehmen kann

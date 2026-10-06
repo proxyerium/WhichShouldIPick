@@ -6,5 +6,13 @@ WeaponPreferTab|武器
 WeaponPreferDefault|默认
 WeaponPreferExplosives|爆炸物
 WeaponPreferUtilities|辅助类
+FoodPrefer|食物偏好
+FoodPreferDesc|拾取范围内有多种食物时，优先抓取的食物
+FoodPreferTab|食物
+FoodPreferDefault|默认
+FoodPreferCarnivorous|食肉
+FoodPreferVegetarian|素食
+GrabConsumedCreatures|抓取空尸体
+GrabConsumedCreaturesDesc|抓取食物键是否也能拾取已被吃光、不剩肉的尸体
 VanillaGrabMeddling|原版抓取键行为
 VanillaGrabMeddlingDesc|原版抓取键是否能够拾取武器和食物

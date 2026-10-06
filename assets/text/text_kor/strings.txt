@@ -6,5 +6,13 @@ WeaponPreferTab|무기
 WeaponPreferDefault|기본
 WeaponPreferExplosives|폭발물
 WeaponPreferUtilities|보조 도구
+FoodPrefer|음식 우선
+FoodPreferDesc|잡을 수 있는 범위에 여러 음식이 있을 때 우선해서 잡을 음식.
+FoodPreferTab|음식
+FoodPreferDefault|기본
+FoodPreferCarnivorous|육식
+FoodPreferVegetarian|채식
+GrabConsumedCreatures|빈 사체 잡기
+GrabConsumedCreaturesDesc|고기가 남지 않게 다 먹힌 사체도 음식 잡기 키로 줍 수 있는지
 VanillaGrabMeddling|잡기 간섭
 VanillaGrabMeddlingDesc|바닐라 잡기 키로 무기와 음식을 줍을 수 있는지 여부
