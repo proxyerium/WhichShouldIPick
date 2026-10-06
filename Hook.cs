@@ -335,10 +335,10 @@ namespace WhichShouldIPick
             // and a throw from inside this hook would freeze the game rather
             // than report the problem.
             WeaponPreference prefer = filter == GrabFilter.Weapon
-                ? Options.WeaponPrefer?.Value ?? WeaponPreference.Default
+                ? Options.WeaponPreference?.Value ?? WeaponPreference.Default
                 : WeaponPreference.Default;
-            FoodPreference foodPrefer = filter == GrabFilter.Food
-                ? Options.FoodPrefer?.Value ?? FoodPreference.Default
+            FoodPreference foodPreference = filter == GrabFilter.Food
+                ? Options.FoodPreference?.Value ?? FoodPreference.Default
                 : FoodPreference.Default;
             PhysicalObject? preferred = null;
             float preferredScore = float.MaxValue;
@@ -408,12 +408,12 @@ namespace WhichShouldIPick
                         preferred = obj;
                     }
 
-                    if (foodPrefer == FoodPreference.Carnivorous && score < preferredScore && IsCorpse(obj))
+                    if (foodPreference == FoodPreference.Carnivorous && score < preferredScore && IsCorpse(obj))
                     {
                         preferredScore = score;
                         preferred = obj;
                     }
-                    else if (foodPrefer == FoodPreference.Vegetarian && score < preferredScore && IsVegetarian(obj))
+                    else if (foodPreference == FoodPreference.Vegetarian && score < preferredScore && IsVegetarian(obj))
                     {
                         preferredScore = score;
                         preferred = obj;

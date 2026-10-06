@@ -6,7 +6,7 @@ namespace WhichShouldIPick
     //
     // The member names are what the config file stores, so renaming one would
     // reset the setting for everyone who already has it. What the menu shows
-    // comes from Translate(WeaponPrefer<member>) - see GetEnumDesc below.
+    // comes from Translate(WeaponPreference<member>) - see GetEnumDesc below.
     public enum WeaponPreference
     {
         // Vanilla's own ordering: nearest first, spear favored, flip bias.
@@ -25,7 +25,7 @@ namespace WhichShouldIPick
     //
     // Member names are the config file's storage, so renaming one resets the
     // setting for players who already have it; the menu label comes from
-    // Translate(FoodPrefer<member>) through the same GetEnumDesc hook below.
+    // Translate(FoodPreference<member>) through the same GetEnumDesc hook below.
     public enum FoodPreference
     {
         // Vanilla's own ordering: nearest first, flip bias.
@@ -46,15 +46,15 @@ namespace WhichShouldIPick
     //
     // Every string the player sees is a neutral key of this mod's own
     // Text/Text_<lang>/strings.txt:
-    //   WeaponPrefer          - the option's label, which the menu translates
+    //   WeaponPreference          - the option's label, which the menu translates
     //                           for itself out of the bind key
-    //   WeaponPreferDesc      - the description
-    //   WeaponPreferTab       - the tab's name
-    //   WeaponPrefer<member>  - the three value labels
-    //   FoodPrefer            - the second preference's label
-    //   FoodPreferDesc        - its description
-    //   FoodPreferTab         - its tab's name
-    //   FoodPrefer<member>    - its three value labels
+    //   WeaponPreferenceDesc      - the description
+    //   WeaponPreferenceTab       - the tab's name
+    //   WeaponPreference<member>  - the three value labels
+    //   FoodPreference            - the second preference's label
+    //   FoodPreferenceDesc        - its description
+    //   FoodPreferenceTab         - its tab's name
+    //   FoodPreference<member>    - its three value labels
     //   GrabConsumedCreatures     - the corpse option's label
     //   GrabConsumedCreaturesDesc - its description
     //   VanillaGrabMeddling         - the last option's label
@@ -68,22 +68,22 @@ namespace WhichShouldIPick
     internal static class Options
     {
         // Valid bind keys are letters, digits and underscores only.
-        public const string WeaponPreferKey = "WeaponPrefer";
-        public const string WeaponPreferDescKey = "WeaponPreferDesc";
-        public const string TabKey = "WeaponPreferTab";
-        public const string FoodPreferKey = "FoodPrefer";
-        public const string FoodPreferDescKey = "FoodPreferDesc";
-        public const string FoodTabKey = "FoodPreferTab";
+        public const string WeaponPreferenceKey = "WeaponPreference";
+        public const string WeaponPreferenceDescKey = "WeaponPreferenceDesc";
+        public const string TabKey = "WeaponPreferenceTab";
+        public const string FoodPreferenceKey = "FoodPreference";
+        public const string FoodPreferenceDescKey = "FoodPreferenceDesc";
+        public const string FoodTabKey = "FoodPreferenceTab";
         public const string ConsumedKey = "GrabConsumedCreatures";
         public const string ConsumedDescKey = "GrabConsumedCreaturesDesc";
         public const string VanillaMeddlingKey = "VanillaGrabMeddling";
         public const string VanillaMeddlingDescKey = "VanillaGrabMeddlingDesc";
 
-        public static Configurable<WeaponPreference> WeaponPrefer { get; private set; } = null!;
+        public static Configurable<WeaponPreference> WeaponPreference { get; private set; } = null!;
 
         // Which edible to reach for first. Default leaves the vanilla search
         // alone, so nothing changes for a player who never opens this menu.
-        public static Configurable<FoodPreference> FoodPrefer { get; private set; } = null!;
+        public static Configurable<FoodPreference> FoodPreference { get; private set; } = null!;
 
         // Off by default: a corpse with meat still on it is food for a slugcat
         // that could eat it, and the food key drags it. On, a corpse whose meat
@@ -113,7 +113,7 @@ namespace WhichShouldIPick
         {
             orig(self);
 
-            if (WeaponPrefer != null)
+            if (WeaponPreference != null)
             {
                 return;
             }
@@ -122,11 +122,11 @@ namespace WhichShouldIPick
             // loads the string tables itself on first use, so translating here
             // is safe - and necessary for the tab name, which the menu prints
             // exactly as given.
-            WeaponPrefer = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
-                WeaponPreferKey,
-                WeaponPreference.Default,
+            WeaponPreference = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
+                WeaponPreferenceKey,
+                global::WhichShouldIPick.WeaponPreference.Default,
                 new ConfigurableInfo(
-                    OptionInterface.Translate(WeaponPreferDescKey),
+                    OptionInterface.Translate(WeaponPreferenceDescKey),
                     autoTab: OptionInterface.Translate(TabKey)));
 
             // Same tab as the preference, and the same object graph: one
@@ -141,11 +141,11 @@ namespace WhichShouldIPick
 
             // Its own tab, so the weapon preference and the food preference do
             // not share a page - each holds one enum and reads better alone.
-            FoodPrefer = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
-                FoodPreferKey,
-                FoodPreference.Default,
+            FoodPreference = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
+                FoodPreferenceKey,
+                global::WhichShouldIPick.FoodPreference.Default,
                 new ConfigurableInfo(
-                    OptionInterface.Translate(FoodPreferDescKey),
+                    OptionInterface.Translate(FoodPreferenceDescKey),
                     autoTab: OptionInterface.Translate(FoodTabKey)));
 
             // Same tab as the food preference: it is the same subject, whether
@@ -168,7 +168,7 @@ namespace WhichShouldIPick
         {
             if (value is WeaponPreference)
             {
-                string key = WeaponPreferKey + value;
+                string key = WeaponPreferenceKey + value;
                 string translated = OptionInterface.Translate(key);
                 if (translated != key)
                 {
@@ -178,7 +178,7 @@ namespace WhichShouldIPick
 
             if (value is FoodPreference)
             {
-                string key = FoodPreferKey + value;
+                string key = FoodPreferenceKey + value;
                 string translated = OptionInterface.Translate(key);
                 if (translated != key)
                 {

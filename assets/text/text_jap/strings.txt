@@ -1,17 +1,17 @@
 Grab weapon|武器をつかむ
 Grab food|食べ物をつかむ
-WeaponPrefer|武器の優先
-WeaponPreferDesc|つかめる範囲に複数の種類があるとき、優先してつかむ種類。
-WeaponPreferTab|武器
-WeaponPreferDefault|標準
-WeaponPreferExplosives|爆発物
-WeaponPreferUtilities|補助具
-FoodPrefer|食べ物の優先
-FoodPreferDesc|つかめる範囲に複数の食べ物があるとき、優先してつかむ食べ物。
-FoodPreferTab|食べ物
-FoodPreferDefault|標準
-FoodPreferCarnivorous|肉食
-FoodPreferVegetarian|植物性
+WeaponPreference|武器の優先
+WeaponPreferenceDesc|つかめる範囲に複数の種類があるとき、優先してつかむ種類。
+WeaponPreferenceTab|武器
+WeaponPreferenceDefault|標準
+WeaponPreferenceExplosives|爆発物
+WeaponPreferenceUtilities|補助具
+FoodPreference|食べ物の優先
+FoodPreferenceDesc|つかめる範囲に複数の食べ物があるとき、優先してつかむ食べ物。
+FoodPreferenceTab|食べ物
+FoodPreferenceDefault|標準
+FoodPreferenceCarnivorous|肉食
+FoodPreferenceVegetarian|植物性
 GrabConsumedCreatures|空の死骸をつかむ
 GrabConsumedCreaturesDesc|肉を食べつくされた、残りのない死骸も「食べ物をつかむ」で拾えるかどうか
 VanillaGrabMeddling|つかむの干渉

@@ -1,17 +1,17 @@
 Grab weapon|Pegar arma
 Grab food|Pegar comida
-WeaponPrefer|Preferência de arma
-WeaponPreferDesc|Qual tipo pegar quando vários tipos estão ao alcance.
-WeaponPreferTab|Arma
-WeaponPreferDefault|Padrão
-WeaponPreferExplosives|Explosivos
-WeaponPreferUtilities|Utilitários
-FoodPrefer|Preferência de comida
-FoodPreferDesc|Qual comida pegar primeiro quando várias estão ao alcance.
-FoodPreferTab|Comida
-FoodPreferDefault|Padrão
-FoodPreferCarnivorous|Carnívoro
-FoodPreferVegetarian|Vegetariano
+WeaponPreference|Preferência de arma
+WeaponPreferenceDesc|Qual tipo pegar quando vários tipos estão ao alcance.
+WeaponPreferenceTab|Arma
+WeaponPreferenceDefault|Padrão
+WeaponPreferenceExplosives|Explosivos
+WeaponPreferenceUtilities|Utilitários
+FoodPreference|Preferência de comida
+FoodPreferenceDesc|Qual comida pegar primeiro quando várias estão ao alcance.
+FoodPreferenceTab|Comida
+FoodPreferenceDefault|Padrão
+FoodPreferenceCarnivorous|Carnívoro
+FoodPreferenceVegetarian|Vegetariano
 GrabConsumedCreatures|Pegar carcaças vazias
 GrabConsumedCreaturesDesc|Se Pegar comida também pode pegar uma carcaça já comida, sem carne restante
 VanillaGrabMeddling|Intromissão do Pegar

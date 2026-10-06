@@ -1,17 +1,17 @@
 Grab weapon|Ramasser l'arme
 Grab food|Ramasser la nourriture
-WeaponPrefer|Préférence d'arme
-WeaponPreferDesc|Quel type ramasser quand plusieurs sortes sont à portée.
-WeaponPreferTab|Arme
-WeaponPreferDefault|Par défaut
-WeaponPreferExplosives|Explosifs
-WeaponPreferUtilities|Utilitaires
-FoodPrefer|Préférence de nourriture
-FoodPreferDesc|Quel aliment prendre en premier quand plusieurs sont à portée.
-FoodPreferTab|Nourriture
-FoodPreferDefault|Par défaut
-FoodPreferCarnivorous|Carnivore
-FoodPreferVegetarian|Végétarien
+WeaponPreference|Préférence d'arme
+WeaponPreferenceDesc|Quel type ramasser quand plusieurs sortes sont à portée.
+WeaponPreferenceTab|Arme
+WeaponPreferenceDefault|Par défaut
+WeaponPreferenceExplosives|Explosifs
+WeaponPreferenceUtilities|Utilitaires
+FoodPreference|Préférence de nourriture
+FoodPreferenceDesc|Quel aliment prendre en premier quand plusieurs sont à portée.
+FoodPreferenceTab|Nourriture
+FoodPreferenceDefault|Par défaut
+FoodPreferenceCarnivorous|Carnivore
+FoodPreferenceVegetarian|Végétarien
 GrabConsumedCreatures|Prendre les cadavres vides
 GrabConsumedCreaturesDesc|Si Ramasser la nourriture peut aussi prendre un cadavre déjà mangé, sans viande restante
 VanillaGrabMeddling|Ingérence du Ramasser

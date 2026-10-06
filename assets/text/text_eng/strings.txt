@@ -1,18 +1,18 @@
 Grab weapon|Grab weapon
 Grab food|Grab food
-WeaponPrefer|Weapon prefer
-WeaponPreferDesc|Which type to grab when several kinds are within reach.
-WeaponPreferTab|Weapon
-WeaponPreferDefault|Default
-WeaponPreferExplosives|Explosives
-WeaponPreferUtilities|Utilities
-FoodPrefer|Food prefer
-FoodPreferDesc|Which food to grab first when several are within reach.
-FoodPreferTab|Food
-FoodPreferDefault|Default
-FoodPreferCarnivorous|Carnivorous
-FoodPreferVegetarian|Vegetarian
+WeaponPreference|Weapon prefer
+WeaponPreferenceDesc|Which weapon to grab when several are within reach.
+WeaponPreferenceTab|Weapon
+WeaponPreferenceDefault|Default
+WeaponPreferenceExplosives|Explosives
+WeaponPreferenceUtilities|Utilities
+FoodPreference|Food prefer
+FoodPreferenceDesc|Which food to grab first when several are within reach.
+FoodPreferenceTab|Food
+FoodPreferenceDefault|Default
+FoodPreferenceCarnivorous|Carnivorous
+FoodPreferenceVegetarian|Vegetarian
 GrabConsumedCreatures|Grab empty corpses
-GrabConsumedCreaturesDesc|Whether Grab food can also pick up a corpse that has been eaten clean, with no meat left
+GrabConsumedCreaturesDesc|Still pick up a corpse that without meat left
 VanillaGrabMeddling|Vanilla Grab meddling
 VanillaGrabMeddlingDesc|Whether vanilla Grab key can pick weapons and foods

@@ -1,17 +1,17 @@
 Grab weapon|Waffe greifen
 Grab food|Nahrung greifen
-WeaponPrefer|Waffe bevorzugen
-WeaponPreferDesc|Welche Art greifen, wenn mehrere Sorten in Reichweite sind.
-WeaponPreferTab|Waffe
-WeaponPreferDefault|Standard
-WeaponPreferExplosives|Sprengstoff
-WeaponPreferUtilities|Hilfsmittel
-FoodPrefer|Nahrung bevorzugen
-FoodPreferDesc|Welche Nahrung zuerst greifen, wenn mehrere in Reichweite sind.
-FoodPreferTab|Nahrung
-FoodPreferDefault|Standard
-FoodPreferCarnivorous|Fleischfressend
-FoodPreferVegetarian|Vegetarisch
+WeaponPreference|Waffe bevorzugen
+WeaponPreferenceDesc|Welche Art greifen, wenn mehrere Sorten in Reichweite sind.
+WeaponPreferenceTab|Waffe
+WeaponPreferenceDefault|Standard
+WeaponPreferenceExplosives|Sprengstoff
+WeaponPreferenceUtilities|Hilfsmittel
+FoodPreference|Nahrung bevorzugen
+FoodPreferenceDesc|Welche Nahrung zuerst greifen, wenn mehrere in Reichweite sind.
+FoodPreferenceTab|Nahrung
+FoodPreferenceDefault|Standard
+FoodPreferenceCarnivorous|Fleischfressend
+FoodPreferenceVegetarian|Vegetarisch
 GrabConsumedCreatures|Leere Kadaver aufnehmen
 GrabConsumedCreaturesDesc|Ob Nahrung greifen auch einen leergefressenen Kadaver ohne Fleisch aufnehmen kann
 VanillaGrabMeddling|Greifen-Einmischung

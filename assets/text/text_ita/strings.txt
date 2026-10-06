@@ -1,17 +1,17 @@
 Grab weapon|Prendi l'arma
 Grab food|Prendi il cibo
-WeaponPrefer|Preferenza arma
-WeaponPreferDesc|Quale tipo prendere quando più tipi sono a portata.
-WeaponPreferTab|Arma
-WeaponPreferDefault|Predefinito
-WeaponPreferExplosives|Esplosivi
-WeaponPreferUtilities|Utilità
-FoodPrefer|Preferenza cibo
-FoodPreferDesc|Quale cibo prendere per primo quando più tipi sono a portata.
-FoodPreferTab|Cibo
-FoodPreferDefault|Predefinito
-FoodPreferCarnivorous|Carnivoro
-FoodPreferVegetarian|Vegetariano
+WeaponPreference|Preferenza arma
+WeaponPreferenceDesc|Quale tipo prendere quando più tipi sono a portata.
+WeaponPreferenceTab|Arma
+WeaponPreferenceDefault|Predefinito
+WeaponPreferenceExplosives|Esplosivi
+WeaponPreferenceUtilities|Utilità
+FoodPreference|Preferenza cibo
+FoodPreferenceDesc|Quale cibo prendere per primo quando più tipi sono a portata.
+FoodPreferenceTab|Cibo
+FoodPreferenceDefault|Predefinito
+FoodPreferenceCarnivorous|Carnivoro
+FoodPreferenceVegetarian|Vegetariano
 GrabConsumedCreatures|Prendi carcasse vuote
 GrabConsumedCreaturesDesc|Se Prendi il cibo può anche raccogliere una carcassa già mangiata, senza carne rimasta
 VanillaGrabMeddling|Intromissione di Prendi
