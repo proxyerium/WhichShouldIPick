@@ -6,3 +6,5 @@ WeaponPreferTab|武器
 WeaponPreferDefault|標準
 WeaponPreferExplosives|爆発物
 WeaponPreferUtilities|補助具
+VanillaGrabMeddling|つかむの干渉
+VanillaGrabMeddlingDesc|バニラの「つかむ」キーが武器と食べ物を拾えるかどうか

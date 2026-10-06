@@ -6,3 +6,5 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Predefinito
 WeaponPreferExplosives|Esplosivi
 WeaponPreferUtilities|Utilità
+VanillaGrabMeddling|Intromissione di Prendi
+VanillaGrabMeddlingDesc|Se il tasto Prendi può raccogliere armi e cibo

@@ -6,3 +6,5 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Predeterminado
 WeaponPreferExplosives|Explosivos
 WeaponPreferUtilities|Utilitarios
+VanillaGrabMeddling|Intromisión de Agarrar
+VanillaGrabMeddlingDesc|Si la tecla Agarrar puede coger armas y comida

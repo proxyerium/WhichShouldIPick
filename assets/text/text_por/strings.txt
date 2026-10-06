@@ -6,3 +6,5 @@ WeaponPreferTab|Arma
 WeaponPreferDefault|Padrão
 WeaponPreferExplosives|Explosivos
 WeaponPreferUtilities|Utilitários
+VanillaGrabMeddling|Intromissão do Pegar
+VanillaGrabMeddlingDesc|Se a tecla Pegar pode pegar armas e comida

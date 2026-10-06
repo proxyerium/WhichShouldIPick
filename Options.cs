@@ -32,6 +32,8 @@ namespace WhichShouldIPick
     //   WeaponPreferDesc      - the description
     //   WeaponPreferTab       - the tab's name
     //   WeaponPrefer<member>  - the three value labels
+    //   VanillaGrabMeddling         - the second option's label
+    //   VanillaGrabMeddlingDesc     - its description
     //
     // Two of those the game cannot reach on its own. A tab's name is printed
     // verbatim, so it is translated here at bind time. A value label is built
@@ -44,8 +46,16 @@ namespace WhichShouldIPick
         public const string WeaponPreferKey = "WeaponPrefer";
         public const string WeaponPreferDescKey = "WeaponPreferDesc";
         public const string TabKey = "WeaponPreferTab";
+        public const string VanillaMeddlingKey = "VanillaGrabMeddling";
+        public const string VanillaMeddlingDescKey = "VanillaGrabMeddlingDesc";
 
         public static Configurable<WeaponPreference> WeaponPrefer { get; private set; } = null!;
+
+        // Off by default: while it is off the vanilla Grab key behaves exactly
+        // as vanilla does, which is what a player who never opens this menu
+        // should get. On, it makes the two keys the mod adds the only way to
+        // pick up a weapon or edible food - vanilla's own key walks past both.
+        public static Configurable<bool> VanillaMeddling { get; private set; } = null!;
 
         // Called from Plugin.Awake, before the game starts loading mods.
         public static void Register()
@@ -76,6 +86,16 @@ namespace WhichShouldIPick
                 WeaponPreference.Default,
                 new ConfigurableInfo(
                     OptionInterface.Translate(WeaponPreferDescKey),
+                    autoTab: OptionInterface.Translate(TabKey)));
+
+            // Same tab as the preference, and the same object graph: one
+            // automatic option interface holds both configurables, so binding
+            // this second one costs no menu code.
+            VanillaMeddling = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
+                VanillaMeddlingKey,
+                false,
+                new ConfigurableInfo(
+                    OptionInterface.Translate(VanillaMeddlingDescKey),
                     autoTab: OptionInterface.Translate(TabKey)));
         }
 

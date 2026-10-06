@@ -6,3 +6,5 @@ WeaponPreferTab|Waffe
 WeaponPreferDefault|Standard
 WeaponPreferExplosives|Sprengstoff
 WeaponPreferUtilities|Hilfsmittel
+VanillaGrabMeddling|Greifen-Einmischung
+VanillaGrabMeddlingDesc|Ob die Greifen-Taste Waffen und Nahrung aufnehmen kann

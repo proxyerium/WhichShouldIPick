@@ -6,3 +6,5 @@ WeaponPreferTab|Arme
 WeaponPreferDefault|Par défaut
 WeaponPreferExplosives|Explosifs
 WeaponPreferUtilities|Utilitaires
+VanillaGrabMeddling|Ingérence du Ramasser
+VanillaGrabMeddlingDesc|Si la touche Ramasser peut prendre les armes et la nourriture

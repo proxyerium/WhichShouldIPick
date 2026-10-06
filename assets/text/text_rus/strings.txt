@@ -6,3 +6,5 @@ WeaponPreferTab|Оружие
 WeaponPreferDefault|По умолчанию
 WeaponPreferExplosives|Взрывчатка
 WeaponPreferUtilities|Вспомогательное
+VanillaGrabMeddling|Вмешательство «Схватить»
+VanillaGrabMeddlingDesc|Может ли клавиша «Схватить» брать оружие и еду

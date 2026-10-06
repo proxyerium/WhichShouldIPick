@@ -6,3 +6,5 @@ WeaponPreferTab|무기
 WeaponPreferDefault|기본
 WeaponPreferExplosives|폭발물
 WeaponPreferUtilities|보조 도구
+VanillaGrabMeddling|잡기 간섭
+VanillaGrabMeddlingDesc|바닐라 잡기 키로 무기와 음식을 줍을 수 있는지 여부

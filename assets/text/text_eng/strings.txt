@@ -6,3 +6,5 @@ WeaponPreferTab|Weapon
 WeaponPreferDefault|Default
 WeaponPreferExplosives|Explosives
 WeaponPreferUtilities|Utilities
+VanillaGrabMeddling|Vanilla Grab meddling
+VanillaGrabMeddlingDesc|Whether vanilla Grab key can pick weapons and foods
