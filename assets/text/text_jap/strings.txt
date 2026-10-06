@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|肉食
 FoodPreferenceVegetarian|植物性
 GrabConsumedCreatures|空の死骸をつかむ
 GrabConsumedCreaturesDesc|肉を食べつくされた、残りのない死骸も「食べ物をつかむ」で拾えるかどうか
+GeneralTab|一般
 VanillaGrabMeddling|つかむの干渉
 VanillaGrabMeddlingDesc|バニラの「つかむ」キーが武器と食べ物を拾えるかどうか

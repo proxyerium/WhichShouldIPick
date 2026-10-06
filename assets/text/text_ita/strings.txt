@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|Carnivoro
 FoodPreferenceVegetarian|Vegetariano
 GrabConsumedCreatures|Prendi carcasse vuote
 GrabConsumedCreaturesDesc|Se Prendi il cibo può anche raccogliere una carcassa già mangiata, senza carne rimasta
+GeneralTab|Generale
 VanillaGrabMeddling|Intromissione di Prendi
 VanillaGrabMeddlingDesc|Se il tasto Prendi può raccogliere armi e cibo

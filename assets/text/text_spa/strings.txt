@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|Carnívoro
 FoodPreferenceVegetarian|Vegetariano
 GrabConsumedCreatures|Coger cadáveres vacíos
 GrabConsumedCreaturesDesc|Si Agarrar comida también puede coger un cadáver ya comido, sin carne restante
+GeneralTab|General
 VanillaGrabMeddling|Intromisión de Agarrar
 VanillaGrabMeddlingDesc|Si la tecla Agarrar puede coger armas y comida

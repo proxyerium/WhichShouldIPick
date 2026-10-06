@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|Fleischfressend
 FoodPreferenceVegetarian|Vegetarisch
 GrabConsumedCreatures|Leere Kadaver aufnehmen
 GrabConsumedCreaturesDesc|Ob Nahrung greifen auch einen leergefressenen Kadaver ohne Fleisch aufnehmen kann
+GeneralTab|Allgemein
 VanillaGrabMeddling|Greifen-Einmischung
 VanillaGrabMeddlingDesc|Ob die Greifen-Taste Waffen und Nahrung aufnehmen kann

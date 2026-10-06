@@ -57,6 +57,7 @@ namespace WhichShouldIPick
     //   FoodPreference<member>    - its three value labels
     //   GrabConsumedCreatures     - the corpse option's label
     //   GrabConsumedCreaturesDesc - its description
+    //   GeneralTab                  - the general tab's name
     //   VanillaGrabMeddling         - the last option's label
     //   VanillaGrabMeddlingDesc     - its description
     //
@@ -65,19 +66,28 @@ namespace WhichShouldIPick
     // by EnumHelper.GetEnumDesc, which reads the [Description] attribute - a
     // compile-time constant with no way to be translated - so GetEnumDesc is
     // hooked below and the neutral key substituted there instead.
+    //
+    // The menu does not show tabs in bind order. InternalOI_Auto groups the
+    // binds by their autoTab, then sorts the tab names with
+    // ConfigContainer.comInfo.Compare(..., CompareOptions.StringSort) - the
+    // invariant culture, so case-sensitive and by Unicode code point - and
+    // sorts each tab's options by their config key. Nothing in the mod can fix
+    // a tab's position, which is why the three tab names here were chosen so
+    // that their translations sort the way the menu should read.
     internal static class Options
     {
         // Valid bind keys are letters, digits and underscores only.
+        public const string GeneralTabKey = "GeneralTab";
+        public const string VanillaMeddlingKey = "VanillaGrabMeddling";
+        public const string VanillaMeddlingDescKey = "VanillaGrabMeddlingDesc";
+        public const string WeaponTabKey = "WeaponPreferenceTab";
         public const string WeaponPreferenceKey = "WeaponPreference";
         public const string WeaponPreferenceDescKey = "WeaponPreferenceDesc";
-        public const string TabKey = "WeaponPreferenceTab";
         public const string FoodPreferenceKey = "FoodPreference";
         public const string FoodPreferenceDescKey = "FoodPreferenceDesc";
         public const string FoodTabKey = "FoodPreferenceTab";
         public const string ConsumedKey = "GrabConsumedCreatures";
         public const string ConsumedDescKey = "GrabConsumedCreaturesDesc";
-        public const string VanillaMeddlingKey = "VanillaGrabMeddling";
-        public const string VanillaMeddlingDescKey = "VanillaGrabMeddlingDesc";
 
         public static Configurable<WeaponPreference> WeaponPreference { get; private set; } = null!;
 
@@ -118,29 +128,32 @@ namespace WhichShouldIPick
                 return;
             }
 
-            // RainWorld.Awake has already set Custom.rainWorld, and Translate
-            // loads the string tables itself on first use, so translating here
-            // is safe - and necessary for the tab name, which the menu prints
-            // exactly as given.
-            WeaponPreference = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
-                WeaponPreferenceKey,
-                global::WhichShouldIPick.WeaponPreference.Default,
-                new ConfigurableInfo(
-                    OptionInterface.Translate(WeaponPreferenceDescKey),
-                    autoTab: OptionInterface.Translate(TabKey)));
-
-            // Same tab as the preference, and the same object graph: one
-            // automatic option interface holds both configurables, so binding
-            // this second one costs no menu code.
+            // A tab of its own: it is the mod's own switch rather than a rule
+            // about what a key reaches for, so it has nothing to share with
+            // the two preferences. Which tab a bind lands on is all autoTab
+            // decides; the menu then orders the tabs itself, by sorting their
+            // translated names - see the note above Options.
             VanillaMeddling = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
                 VanillaMeddlingKey,
                 false,
                 new ConfigurableInfo(
                     OptionInterface.Translate(VanillaMeddlingDescKey),
-                    autoTab: OptionInterface.Translate(TabKey)));
+                    autoTab: OptionInterface.Translate(GeneralTabKey)));
 
-            // Its own tab, so the weapon preference and the food preference do
-            // not share a page - each holds one enum and reads better alone.
+            // Second tab. RainWorld.Awake has already set Custom.rainWorld, and
+            // Translate loads the string tables itself on first use, so
+            // translating here is safe - and necessary for the tab name, which
+            // the menu prints exactly as given.
+            WeaponPreference = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
+                WeaponPreferenceKey,
+                global::WhichShouldIPick.WeaponPreference.Default,
+                new ConfigurableInfo(
+                    OptionInterface.Translate(WeaponPreferenceDescKey),
+                    autoTab: OptionInterface.Translate(WeaponTabKey)));
+
+            // Third, and last of the three: the two preferences hold one enum
+            // each and read better apart. Its sibling, the corpse switch,
+            // shares this page.
             FoodPreference = MachineConnector.GetRegisteredOI("which-should-i-pick").config.Bind(
                 FoodPreferenceKey,
                 global::WhichShouldIPick.FoodPreference.Default,

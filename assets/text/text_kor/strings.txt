@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|육식
 FoodPreferenceVegetarian|채식
 GrabConsumedCreatures|빈 사체 잡기
 GrabConsumedCreaturesDesc|고기가 남지 않게 다 먹힌 사체도 음식 잡기 키로 줍 수 있는지
+GeneralTab|일반
 VanillaGrabMeddling|잡기 간섭
 VanillaGrabMeddlingDesc|바닐라 잡기 키로 무기와 음식을 줍을 수 있는지 여부

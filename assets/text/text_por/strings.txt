@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|Carnívoro
 FoodPreferenceVegetarian|Vegetariano
 GrabConsumedCreatures|Pegar carcaças vazias
 GrabConsumedCreaturesDesc|Se Pegar comida também pode pegar uma carcaça já comida, sem carne restante
+GeneralTab|Geral
 VanillaGrabMeddling|Intromissão do Pegar
 VanillaGrabMeddlingDesc|Se a tecla Pegar pode pegar armas e comida

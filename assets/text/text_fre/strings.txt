@@ -14,5 +14,6 @@ FoodPreferenceCarnivorous|Carnivore
 FoodPreferenceVegetarian|Végétarien
 GrabConsumedCreatures|Prendre les cadavres vides
 GrabConsumedCreaturesDesc|Si Ramasser la nourriture peut aussi prendre un cadavre déjà mangé, sans viande restante
+GeneralTab|Général
 VanillaGrabMeddling|Ingérence du Ramasser
 VanillaGrabMeddlingDesc|Si la touche Ramasser peut prendre les armes et la nourriture

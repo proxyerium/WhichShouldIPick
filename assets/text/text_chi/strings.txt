@@ -13,6 +13,7 @@ FoodPreferenceDefault|默认
 FoodPreferenceCarnivorous|肉食
 FoodPreferenceVegetarian|素食
 GrabConsumedCreatures|抓取空尸体
-GrabConsumedCreaturesDesc|抓取食物键是否也能拾取已被吃光、不剩肉的尸体
+GrabConsumedCreaturesDesc|抓取食物键是否拾取已吃光的尸体
+GeneralTab|通用
 VanillaGrabMeddling|原版抓取键行为
 VanillaGrabMeddlingDesc|原版抓取键是否能够拾取武器和食物

@@ -13,6 +13,7 @@ FoodPreferenceDefault|Default
 FoodPreferenceCarnivorous|Carnivorous
 FoodPreferenceVegetarian|Vegetarian
 GrabConsumedCreatures|Grab empty corpses
-GrabConsumedCreaturesDesc|Still pick up a corpse that without meat left
+GrabConsumedCreaturesDesc|Still pick up a corpse that with no meat left
+GeneralTab|General
 VanillaGrabMeddling|Vanilla Grab meddling
 VanillaGrabMeddlingDesc|Whether vanilla Grab key can pick weapons and foods
