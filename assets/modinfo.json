@@ -1,7 +1,7 @@
 {
     "id": "which-should-i-pick",
     "name": "Which should I pick?",
-    "version": "0.3",
+    "version": "0.4",
     "authors": "proxyerium",
     "requirements": [
         "improved-input-config"
