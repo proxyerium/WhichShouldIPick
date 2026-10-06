@@ -11,10 +11,13 @@
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)out\plugins" />
 
 		<ItemGroup>
-			<Assets Include="$(ProjectDir)assets\**\*" />
+			<Assets Include="$(ProjectDir)assets\**\*" Exclude="$(ProjectDir)assets\modinfo.json;$(ProjectDir)assets\modinfo.dev.json" />
+			<ModInfo Include="$(ProjectDir)assets\modinfo.dev.json" Condition="'$(Configuration)' == 'Debug'" />
+			<ModInfo Include="$(ProjectDir)assets\modinfo.json" Condition="'$(Configuration)' == 'Release'" />
 		</ItemGroup>
 
 		<Copy SourceFiles="@(Assets)" DestinationFiles="@(Assets->'$(ProjectDir)out\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(ModInfo)" DestinationFiles="$(ProjectDir)out\modinfo.json" />
 	</Target>
 
 	<ItemGroup>
