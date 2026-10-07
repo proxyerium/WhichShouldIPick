@@ -1,12 +1,13 @@
 Grab weapon|Grab weapon
 Grab food|Grab food
-WeaponPreference|Weapon prefer
+WeaponPreference|Weapon preference
 WeaponPreferenceDesc|Which weapon to grab when several are within reach.
 WeaponPreferenceTab|Weapon
 WeaponPreferenceDefault|Default
 WeaponPreferenceExplosives|Explosives
 WeaponPreferenceUtilities|Utilities
 FoodPreference|Food prefer
+FoodPreference|Food preference
 FoodPreferenceDesc|Which food to grab first when several are within reach.
 FoodPreferenceTab|Food
 FoodPreferenceDefault|Default
