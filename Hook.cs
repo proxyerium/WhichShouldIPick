@@ -63,8 +63,8 @@ internal static class Hook
         // one item through PickupCandidate. A category key answers with
         // that kind only; nothing of it in range -> null, which vanilla
         // handles by doing the reach and grabbing nothing. With the option
-        // on, a plain vanilla grab answers with everything except the two
-        // kinds the mod's keys own.
+        // off, a plain vanilla grab answers with the two kinds the mod's
+        // keys own removed.
         On.Player.PickupCandidate += (orig, self, favorSpears) =>
         {
             if (RequestedCategory(self, out GrabFilter filter))
@@ -111,7 +111,7 @@ internal static class Hook
         On.Player.ReleaseObject += (orig, self, grasp, eu) =>
         {
             if (!RequestedCategory(self, out GrabFilter filter)
-                || MatchesFilter(self, Grabbed(self, grasp), filter))
+                || MatchesFilter(self, self.grasps[grasp]?.grabbed, filter))
             {
                 orig(self, grasp, eu);
                 return;
@@ -119,21 +119,13 @@ internal static class Hook
 
             for (int i = 0; i < self.grasps.Length; i++)
             {
-                if (MatchesFilter(self, Grabbed(self, i), filter))
+                if (MatchesFilter(self, self.grasps[i]?.grabbed, filter))
                 {
                     orig(self, i, eu);
                     return;
                 }
             }
         };
-    }
-
-    // What a grasp currently holds, or null for an empty hand. Hand
-    // indices run 0..1, and ReleaseObject is only ever reached with a
-    // non-null hand, but the search below probes both.
-    private static PhysicalObject? Grabbed(Player player, int grasp)
-    {
-        return player.grasps[grasp]?.grabbed;
     }
 
     // The vanilla Grab key is never identified by its keybind. What the mod
@@ -204,7 +196,7 @@ internal static class Hook
     // Whether this grab is one the mod lets through. Three states, never
     // two: one of the mod's keys narrows the grab to its own kind, a plain
     // vanilla grab answers with vanilla's whole search - or, with the
-    // option on, with the two kinds the mod's keys own taken out of it -
+    // option off, with the two kinds the mod's keys own taken out of it -
     // and a grab with no pending press behind it (an item handed over by
     // another creature, a scripted pickup) is left alone entirely.
     private static bool Allowed(Player player, PhysicalObject obj)
@@ -233,7 +225,7 @@ internal static class Hook
     // What a grab can be narrowed to. Weapon and Food are what the mod's
     // two keys ask for; Other is vanilla's search with both of them
     // removed, which is what the vanilla key becomes when the player turns
-    // the option on.
+    // the option off.
     private enum GrabFilter
     {
         Weapon,

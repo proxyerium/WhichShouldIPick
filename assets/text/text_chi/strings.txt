@@ -1,19 +1,25 @@
 Grab weapon|抓取武器
 Grab food|抓取食物
 WeaponPreference|武器偏好
-WeaponPreferenceDesc|拾取范围内有多种类型时，优先抓取的类型
+WeaponPreferenceDesc|范围内有多种武器时，优先抓取所选的种类
 WeaponPreferenceTab|武器
 WeaponPreferenceDefault|默认
 WeaponPreferenceExplosives|爆炸物
 WeaponPreferenceUtilities|辅助类
+WeaponPreferenceDefaultDesc|就近的武器优先
+WeaponPreferenceExplosivesDesc|手雷、鞭炮草等爆炸物优先
+WeaponPreferenceUtilitiesDesc|石头、闪光弹、真菌孢子等优先
 FoodPreference|食物偏好
-FoodPreferenceDesc|拾取范围内有多种食物时，优先抓取的食物
+FoodPreferenceDesc|范围内有多种食物时，优先抓取所选的种类
 FoodPreferenceTab|食物
 FoodPreferenceDefault|默认
 FoodPreferenceCarnivorous|肉食
 FoodPreferenceVegetarian|素食
+FoodPreferenceDefaultDesc|就近的食物优先
+FoodPreferenceCarnivorousDesc|肉类和尸体优先
+FoodPreferenceVegetarianDesc|蓝果、蘑菇等植物优先
 GrabConsumedCreatures|抓取空尸体
-GrabConsumedCreaturesDesc|抓取食物键是否拾取已吃光的尸体
+GrabConsumedCreaturesDesc|抓取食物键也会拾取已吃光的尸体
 GeneralTab|通用
 VanillaGrabMeddling|原版抓取键行为
-VanillaGrabMeddlingDesc|原版抓取键是否能够拾取武器和食物
+VanillaGrabMeddlingDesc|原版抓取键也能拾取武器和食物

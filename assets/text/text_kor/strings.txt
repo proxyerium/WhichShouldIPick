@@ -1,19 +1,25 @@
 Grab weapon|무기 잡기
 Grab food|음식 잡기
 WeaponPreference|무기 우선
-WeaponPreferenceDesc|잡을 수 있는 범위에 여러 종류가 있을 때 우선해서 잡을 종류.
+WeaponPreferenceDesc|잡을 수 있는 무기가 여러 개일 때 선택한 종류를 우선해서 잡음
 WeaponPreferenceTab|무기
 WeaponPreferenceDefault|기본
 WeaponPreferenceExplosives|폭발물
 WeaponPreferenceUtilities|보조 도구
+WeaponPreferenceDefaultDesc|가장 가까운 무기가 우선
+WeaponPreferenceExplosivesDesc|수류탄, 폭죽풀 등 폭발물이 우선
+WeaponPreferenceUtilitiesDesc|돌, 섬광탄, 포자열매 등이 우선
 FoodPreference|음식 우선
-FoodPreferenceDesc|잡을 수 있는 범위에 여러 음식이 있을 때 우선해서 잡을 음식.
+FoodPreferenceDesc|잡을 수 있는 음식이 여러 개일 때 선택한 음식을 우선해서 잡음
 FoodPreferenceTab|음식
 FoodPreferenceDefault|기본
 FoodPreferenceCarnivorous|육식
 FoodPreferenceVegetarian|채식
+FoodPreferenceDefaultDesc|가장 가까운 음식이 우선
+FoodPreferenceCarnivorousDesc|고기와 사체가 우선
+FoodPreferenceVegetarianDesc|파란 열매, 버섯 등 식물이 우선
 GrabConsumedCreatures|빈 사체 잡기
-GrabConsumedCreaturesDesc|고기가 남지 않게 다 먹힌 사체도 음식 잡기 키로 줍 수 있는지
+GrabConsumedCreaturesDesc|고기가 남지 않은 사체도 줍음
 GeneralTab|일반
 VanillaGrabMeddling|잡기 간섭
-VanillaGrabMeddlingDesc|바닐라 잡기 키로 무기와 음식을 줍을 수 있는지 여부
+VanillaGrabMeddlingDesc|바닐라 잡기 키로도 무기와 음식을 줍게 함

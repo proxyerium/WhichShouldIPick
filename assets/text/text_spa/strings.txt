@@ -1,19 +1,25 @@
 Grab weapon|Agarrar arma
 Grab food|Agarrar comida
 WeaponPreference|Preferencia de arma
-WeaponPreferenceDesc|Qué tipo agarrar cuando varios tipos están al alcance.
+WeaponPreferenceDesc|Agarra primero el tipo de arma elegido cuando hay varias al alcance
 WeaponPreferenceTab|Arma
 WeaponPreferenceDefault|Predeterminado
 WeaponPreferenceExplosives|Explosivos
 WeaponPreferenceUtilities|Utilitarios
+WeaponPreferenceDefaultDesc|El arma más cercana va primero
+WeaponPreferenceExplosivesDesc|Granadas, petardos y otros explosivos van primero
+WeaponPreferenceUtilitiesDesc|Rocas, granadas cegadoras y bolas de esporas van primero
 FoodPreference|Preferencia de comida
-FoodPreferenceDesc|Qué comida agarrar primero cuando varias están al alcance.
+FoodPreferenceDesc|Agarra primero el tipo de comida elegido cuando hay varias al alcance
 FoodPreferenceTab|Comida
 FoodPreferenceDefault|Predeterminado
 FoodPreferenceCarnivorous|Carnívoro
 FoodPreferenceVegetarian|Vegetariano
+FoodPreferenceDefaultDesc|La comida más cercana va primero
+FoodPreferenceCarnivorousDesc|La carne y los cadáveres van primero
+FoodPreferenceVegetarianDesc|Frutas azules, setas y otras plantas van primero
 GrabConsumedCreatures|Coger cadáveres vacíos
-GrabConsumedCreaturesDesc|Si Agarrar comida también puede coger un cadáver ya comido, sin carne restante
+GrabConsumedCreaturesDesc|También coge un cadáver sin carne restante
 GeneralTab|General
 VanillaGrabMeddling|Intromisión de Agarrar
-VanillaGrabMeddlingDesc|Si la tecla Agarrar puede coger armas y comida
+VanillaGrabMeddlingDesc|Permite que la tecla Agarrar coja armas y comida

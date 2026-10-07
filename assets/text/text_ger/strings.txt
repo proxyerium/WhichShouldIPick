@@ -1,20 +1,25 @@
 Grab weapon|Waffe greifen
 Grab food|Nahrung greifen
 WeaponPreference|Waffenpräferenz
-WeaponPreferenceDesc|Welche Art greifen, wenn mehrere Sorten in Reichweite sind.
+WeaponPreferenceDesc|Greift die gewählte Waffenart zuerst, wenn mehrere in Reichweite sind.
 WeaponPreferenceTab|Waffe
 WeaponPreferenceDefault|Standard
 WeaponPreferenceExplosives|Sprengstoff
 WeaponPreferenceUtilities|Hilfsmittel
-FoodPreference|Nahrung bevorzugen
+WeaponPreferenceDefaultDesc|Die nächstgelegene Waffe kommt zuerst.
+WeaponPreferenceExplosivesDesc|Granaten, Kirschbomben und andere Sprengstoffe kommen zuerst.
+WeaponPreferenceUtilitiesDesc|Fels, Blendgranaten und Sporenschwämme kommen zuerst.
 FoodPreference|Nahrungspräferenz
-FoodPreferenceDesc|Welche Nahrung zuerst greifen, wenn mehrere in Reichweite sind.
+FoodPreferenceDesc|Greift die gewählte Nahrung zuerst, wenn mehrere in Reichweite sind.
 FoodPreferenceTab|Nahrung
 FoodPreferenceDefault|Standard
 FoodPreferenceCarnivorous|Fleischfressend
 FoodPreferenceVegetarian|Vegetarisch
+FoodPreferenceDefaultDesc|Die nächstgelegene Nahrung kommt zuerst.
+FoodPreferenceCarnivorousDesc|Fleisch und Kadaver kommen zuerst.
+FoodPreferenceVegetarianDesc|Blaue Früchte, Pilze und andere Pflanzen kommen zuerst.
 GrabConsumedCreatures|Leere Kadaver aufnehmen
-GrabConsumedCreaturesDesc|Ob Nahrung greifen auch einen leergefressenen Kadaver ohne Fleisch aufnehmen kann
+GrabConsumedCreaturesDesc|Nimmt auch einen Kadaver ohne Fleisch auf.
 GeneralTab|Allgemein
 VanillaGrabMeddling|Greifen-Einmischung
-VanillaGrabMeddlingDesc|Ob die Greifen-Taste Waffen und Nahrung aufnehmen kann
+VanillaGrabMeddlingDesc|Lässt die Greifen-Taste Waffen und Nahrung aufnehmen.

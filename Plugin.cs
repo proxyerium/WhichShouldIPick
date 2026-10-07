@@ -2,18 +2,13 @@ using BepInEx;
 
 namespace WhichShouldIPick;
 
-    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    public class Plugin : BaseUnityPlugin
+[BepInPlugin("proxyerium.which-should-i-pick", "Which should I pick?", "0.4")]
+public class Plugin : BaseUnityPlugin
+{
+    private void Awake()
     {
-        public const string PluginGuid = "proxyerium.which-should-i-pick";
-        public const string PluginName = "Which should I pick?";
-        public const string PluginVersion = "0.4";
-
-        private void Awake()
-        {
-            Keybinds.Register();
-            Hook.Apply();
-            Options.Register();
-        }
+        Options.Register();
+        Keybinds.Register();
+        Hook.Apply();
     }
 }

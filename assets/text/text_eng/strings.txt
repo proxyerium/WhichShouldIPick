@@ -1,20 +1,25 @@
 Grab weapon|Grab weapon
 Grab food|Grab food
 WeaponPreference|Weapon preference
-WeaponPreferenceDesc|Which weapon to grab when several are within reach.
+WeaponPreferenceDesc|Grabs the chosen kind of weapon first when several are in reach
 WeaponPreferenceTab|Weapon
 WeaponPreferenceDefault|Default
 WeaponPreferenceExplosives|Explosives
 WeaponPreferenceUtilities|Utilities
-FoodPreference|Food prefer
+WeaponPreferenceDefaultDesc|The nearest weapon comes first
+WeaponPreferenceExplosivesDesc|Grenades, cherrybombs and other explosives come first
+WeaponPreferenceUtilitiesDesc|Rocks, flashbangs and spore puffs come first
 FoodPreference|Food preference
-FoodPreferenceDesc|Which food to grab first when several are within reach.
+FoodPreferenceDesc|Grabs the chosen kind of food first when several are in reach
 FoodPreferenceTab|Food
 FoodPreferenceDefault|Default
 FoodPreferenceCarnivorous|Carnivorous
 FoodPreferenceVegetarian|Vegetarian
+FoodPreferenceDefaultDesc|The nearest food comes first
+FoodPreferenceCarnivorousDesc|Meat and corpses come first
+FoodPreferenceVegetarianDesc|Blue fruit, mushrooms and other plants come first
 GrabConsumedCreatures|Grab empty corpses
-GrabConsumedCreaturesDesc|Still pick up a corpse that with no meat left
+GrabConsumedCreaturesDesc|Also picks up a corpse with no meat left
 GeneralTab|General
 VanillaGrabMeddling|Vanilla Grab meddling
-VanillaGrabMeddlingDesc|Whether vanilla Grab key can pick weapons and foods
+VanillaGrabMeddlingDesc|Allow the vanilla Grab key pick weapons and foods

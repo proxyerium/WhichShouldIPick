@@ -1,19 +1,25 @@
 Grab weapon|Схватить оружие
 Grab food|Схватить еду
 WeaponPreference|Предпочтение оружия
-WeaponPreferenceDesc|Какой тип хватать, когда в зоне досягаемости несколько видов.
+WeaponPreferenceDesc|Хватает выбранный вид оружия первым, когда рядом несколько
 WeaponPreferenceTab|Оружие
 WeaponPreferenceDefault|По умолчанию
 WeaponPreferenceExplosives|Взрывчатка
 WeaponPreferenceUtilities|Вспомогательное
+WeaponPreferenceDefaultDesc|Ближайшее оружие в приоритете
+WeaponPreferenceExplosivesDesc|Гранаты, вишнебомбы и другая взрывчатка в приоритете
+WeaponPreferenceUtilitiesDesc|Гравий, светошумовые гранаты и споровые мешки в приоритете
 FoodPreference|Предпочтение еды
-FoodPreferenceDesc|Какую еду хватать первой, когда несколько видов в зоне досягаемости.
+FoodPreferenceDesc|Хватает выбранный вид еды первым, когда рядом несколько
 FoodPreferenceTab|Еда
 FoodPreferenceDefault|По умолчанию
 FoodPreferenceCarnivorous|Мясоедное
 FoodPreferenceVegetarian|Растительное
+FoodPreferenceDefaultDesc|Ближайшая еда в приоритете
+FoodPreferenceCarnivorousDesc|Мясо и трупы в приоритете
+FoodPreferenceVegetarianDesc|Синеплоды, грибы и другие растения в приоритете
 GrabConsumedCreatures|Брать пустые трупы
-GrabConsumedCreaturesDesc|Может ли «Схватить еду» также брать съеденный труп без мяса
+GrabConsumedCreaturesDesc|Также берёт труп без мяса
 GeneralTab|Общие
 VanillaGrabMeddling|Вмешательство «Схватить»
-VanillaGrabMeddlingDesc|Может ли клавиша «Схватить» брать оружие и еду
+VanillaGrabMeddlingDesc|Позволяет клавише «Схватить» брать оружие и еду
