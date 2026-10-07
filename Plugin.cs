@@ -1,7 +1,7 @@
 using BepInEx;
 
-namespace WhichShouldIPick
-{
+namespace WhichShouldIPick;
+
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     public class Plugin : BaseUnityPlugin
     {
