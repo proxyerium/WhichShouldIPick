@@ -3,10 +3,11 @@
     "name": "Which should I pick?",
     "version": "0.4",
     "authors": "proxyerium",
+    "description": "let your slugcat pick up what you want.",
     "requirements": [
         "improved-input-config"
     ],
     "requirements_names": [],
-    "tags": [],
+    "tags": [ "Accessibility", "Game Mechanics" ],
     "checksum_override_version": false
 }
