@@ -1,7 +1,7 @@
 {
     "id": "which-should-i-pick",
     "name": "Which should I pick?",
-    "version": "0.4",
+    "version": "0.5",
     "authors": "proxyerium",
     "description": "let your slugcat pick up what you want.",
     "requirements": [
