@@ -18,6 +18,8 @@ public enum FoodPreference
 
 internal static class Options
 {
+    private static bool _isInit;
+
     public static Configurable<WeaponPreference> WeaponPreference { get; private set; } = null!;
     public static Configurable<FoodPreference> FoodPreference { get; private set; } = null!;
     public static Configurable<bool> GrabConsumedCreatures { get; private set; } = null!;
@@ -33,6 +35,13 @@ internal static class Options
     private static void OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
     {
         orig(self);
+
+        if (_isInit)
+        {
+            return;
+        }
+
+        _isInit = true;
 
         var config = MachineConnector.GetRegisteredOI("which-should-i-pick").config;
 
